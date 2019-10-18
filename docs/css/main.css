@@ -1,0 +1,654 @@
+/*
+ * Box-sizing-model
+ */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+ * Responsive images
+*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*
+ * Cursor change on hover on Buttons
+*/
+input[type="submit"] {
+  cursor: pointer;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+html {
+  font-size: 10px;
+  line-height: 1.4;
+}
+body {
+  font-size: 1.6rem;
+  /* 10px * 1.6 = 16px */
+  font-family: 'Noto Sans';
+}
+.heading {
+  position: relative;
+  color: #333;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+@media (min-width: 1200px) {
+  .heading {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+}
+.heading-mg-t-90 {
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  .heading-mg-t-90 {
+    margin-top: 90px;
+  }
+}
+.heading-num:before {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  background-color: #ffc80a;
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFf;
+  padding-top: 4px;
+  padding-left: 9px;
+  left: -10px;
+  top: -40px;
+}
+@media (min-width: 1200px) {
+  .heading-num:before {
+    left: -30px;
+    top: -25px;
+  }
+}
+.heading-num-1:before {
+  content: "1";
+}
+.heading-num-2:before {
+  content: "2";
+}
+.section {
+  margin-top: 22px;
+  margin-bottom: 42px;
+}
+@media (min-width: 1200px) {
+  .section {
+    margin-top: 40px;
+    margin-bottom: 57px;
+  }
+}
+.line {
+  border-top: 1px solid #EAEFF5;
+}
+.footer {
+  background-color: #252525;
+}
+.logo {
+  -ms-text-align-last: center;
+  text-align-last: center;
+  padding-bottom: 40px;
+  padding-top: 90px;
+}
+@media (min-width: 992px) {
+  .logo {
+    padding-top: 50px;
+  }
+}
+.logo_name {
+  font-size: 33px;
+  line-height: 1.5;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .logo_name {
+    font-size: 38px;
+    letter-spacing: 9px;
+  }
+}
+.logo_slogan {
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #A1BBD9;
+  font-weight: 700;
+  letter-spacing: 8px;
+}
+@media (min-width: 768px) {
+  .logo_slogan {
+    font-size: 16px;
+    letter-spacing: 10px;
+  }
+}
+.navigation {
+  background-color: #38383A;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  box-shadow: 0px 5px 10px 0px #2a496d;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+@media (min-width: 992px) {
+  .navigation {
+    position: relative;
+    background-color: #38383A;
+    padding-top: 23px;
+    padding-bottom: 23px;
+  }
+}
+.navigation a {
+  color: #FFF;
+  text-decoration: none;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  display: block;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .navigation a {
+    padding: 0;
+    display: inline;
+  }
+}
+.navigation a:hover,
+.navigation a.active {
+  color: #ffcc00;
+}
+.navigation ul {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  justify-content: space-between;
+  background-color: #35577D;
+}
+@media (min-width: 992px) {
+  .navigation ul {
+    display: flex;
+    background-color: transparent;
+  }
+}
+.navigation li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #466a92;
+}
+@media (min-width: 992px) {
+  .navigation li {
+    border-bottom: none;
+    padding: 0;
+  }
+}
+.navigation li.active {
+  color: #ffcc00;
+}
+.navigation__toggle-button {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-left: 15px;
+  background-color: #38383A;
+}
+.navigation__toggle-button:before {
+  content: "";
+  position: absolute;
+  right: 15px;
+  width: 25px;
+  height: 20px;
+  background: url('../img/icons/navigation-icon.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.navigation__toggle-button:focus,
+.navigation__toggle-button:active {
+  background-color: #16385F;
+}
+@media (min-width: 992px) {
+  .navigation__toggle-button {
+    display: none;
+  }
+}
+.navigation__toggle-button--active {
+  background-color: #16385F;
+}
+.container--mobile--no-padding {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .container--mobile--no-padding {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 970px;
+  }
+}
+@media (min-width: 1170px) {
+  .container--mobile--no-padding {
+    width: 1170px;
+  }
+}
+.karusel {
+  padding-top: 100px;
+  padding-bottom: 127px;
+  text-align: center;
+  background-image: url('../img/images/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0px 3px 25px 0px #688ab3;
+}
+.karusel_title {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 700;
+  color: #FFF;
+  letter-spacing: -0.5px;
+  margin-bottom: 15px;
+}
+@media (min-width: 992px) {
+  .karusel_title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+.karusel_description {
+  font-family: 'Noto Serif';
+  font-size: 18px;
+  line-height: 28px;
+  color: #cddfe0;
+}
+@media (min-width: 992px) {
+  .karusel_description {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+/*
+* 	Owl Carousel Owl Demo Theme 
+*	v1.3.3
+*/
+.first-slider-theme .owl-controls {
+  margin-top: 10px;
+  text-align: center;
+}
+/* Styling Next and Prev buttons */
+.first-slider-theme .owl-controls .owl-buttons div {
+  display: none;
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  top: 50%;
+  margin-top: -36px;
+  filter: alpha(opacity=50);
+  /*IE7 fix*/
+  opacity: 0.5;
+}
+@media (min-width: 768px) {
+  .first-slider-theme .owl-controls .owl-buttons div {
+    display: block;
+  }
+}
+.owl-prev {
+  left: 0;
+  background-image: url('../img/icons/arrow-left.png');
+}
+.owl-next {
+  right: 0;
+  background-image: url('../img/icons/arrow-right.png');
+}
+/* Styling Pagination*/
+.owl-pagination {
+  position: absolute;
+  width: 100%;
+  bottom: -90px;
+}
+@media (min-width: 992px) {
+  .owl-pagination {
+    display: none;
+  }
+}
+.first-slider-theme .owl-controls .owl-page {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /*IE7 life-saver */
+}
+.first-slider-theme .owl-controls .owl-page span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 5px 7px;
+  filter: alpha(opacity=50);
+  /*IE7 fix*/
+  opacity: 0.5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #fff;
+}
+.first-slider-theme .owl-controls .owl-page.active span,
+.first-slider-theme .owl-controls.clickable .owl-page:hover span {
+  filter: alpha(opacity=100);
+  /*IE7 fix*/
+  opacity: 1;
+}
+/* If PaginationNumbers is true */
+.first-slider-theme .owl-controls .owl-page span.owl-numbers {
+  height: auto;
+  width: auto;
+  color: #FFF;
+  padding: 2px 10px;
+  font-size: 12px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+/* preloading images */
+.owl-item.loading {
+  min-height: 150px;
+  background: url(AjaxLoader.gif) no-repeat center center;
+}
+.benefits {
+  margin-top: 40px;
+}
+@media (min-width: 1200px) {
+  .benefits {
+    margin-top: 8px;
+  }
+}
+.benefits_img {
+  margin-top: 30px;
+  margin-bottom: 18px;
+  height: 115px;
+}
+@media (min-width: 1200px) {
+  .benefits_img {
+    margin-bottom: 14px;
+  }
+}
+.benefits_title {
+  color: #333;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+@media (min-width: 1200px) {
+  .benefits_title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+.benefits_description {
+  color: #777;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+.services_img {
+  margin-top: 40px;
+}
+@media (min-width: 768px) {
+  .services_img {
+    margin-top: 70px;
+  }
+}
+.services_img-mr-b-20 {
+  margin-bottom: 20px;
+}
+.services_description {
+  color: #777;
+  font-size: 14px;
+  line-height: 24px;
+}
+.services_description p {
+  margin-bottom: 22px;
+}
+.services_arrow-orange {
+  width: 40px;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.services-mg-l-40 {
+  margin-left: 0px;
+}
+@media (min-width: 440px) {
+  .services-mg-l-40 {
+    margin-left: 40px;
+  }
+}
+.tariffs_title {
+  margin-top: 40px;
+}
+@media (min-width: 992px) {
+  .tariffs_title {
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+}
+.tariffs_slogan {
+  padding: 0px 40px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #777;
+  margin-bottom: 30px;
+}
+@media (min-width: 992px) {
+  .tariffs_slogan {
+    margin-bottom: 50px;
+  }
+}
+.tariffs_card {
+  color: #242526;
+  border-radius: 7px;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 40px 0px rgba(99, 117, 138, 0.3);
+  padding-top: 34px;
+  padding-bottom: 48px;
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .tariffs_card {
+    margin-bottom: 90px;
+  }
+}
+.tariffs_type {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #242526;
+  margin-bottom: 35px;
+}
+.tariffs_price {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 18px;
+  color: #000;
+}
+.tariffs_price:after {
+  content: "c";
+  font-family: 'als_rublregular';
+}
+.tariffs_period {
+  color: #242526;
+  font-size: 12px;
+  margin-bottom: 40px;
+}
+.tariffs_benefits {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 40px;
+}
+.tariffs_benefits ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.tariffs_benefits ul li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.tariffs_benefits ul li:before {
+  content: "";
+  width: 12px;
+  height: 10px;
+  background-image: url(../img/icons/Ok_Icon.png);
+  background-repeat: no-repeat;
+  background-position: left 2px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.button {
+  background-color: #252525;
+  box-shadow: 0px 8px 16px 0px #ababab;
+  border-radius: 30px;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 11px 47px 11px;
+  display: inline-block;
+  cursor: pointer;
+}
+.button:hover,
+.button:active,
+.button:focus {
+  text-decoration: none;
+  background-color: #ffc80a;
+  color: #FFF;
+}
+.button_orange {
+  background-color: #ffc80a;
+  padding-left: 28px;
+  padding-right: 28px;
+  box-shadow: 0px 8px 16px 0px #e9deb9;
+}
+.button_orange:hover,
+.button_orange:active,
+.button_orange:focus {
+  background-color: #ac8605;
+}
+.footer_block {
+  padding-top: 40px;
+  padding-bottom: 0px;
+}
+@media (min-width: 1200px) {
+  .footer_block {
+    padding-top: 75px;
+  }
+}
+@media (min-width: 768px) {
+  .footer_block {
+    padding-bottom: 50px;
+  }
+}
+.footer_title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f7f8f9;
+  margin-bottom: 25px;
+}
+.footer_item ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.footer_item li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.footer_item a {
+  color: #6c6c6c;
+  text-decoration: none;
+}
+.footer_item a:hover {
+  color: #ffc80a;
+}
+.footer p {
+  color: #6c6c6c;
+  font-size: 14px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+@media (min-width: 1200px) {
+  .footer p {
+    margin-bottom: 78px;
+  }
+}
+@media (min-width: 768px) {
+  .footer p {
+    margin-top: 0px;
+  }
+}
