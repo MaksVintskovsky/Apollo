@@ -27,8 +27,6 @@ $(document).ready(function() {
 	    }
 	});
     
-    
-    
     // Скрываем меню при клике на него на смартфоне и планцете
 	// По клику на ссылку в меню запускаем ф-ю fnstart();
 	$('nav.navigation a').on("click", function(){
@@ -44,10 +42,6 @@ $(document).ready(function() {
 			menu.slideToggle();
 		}
 	};
-    
-    
-    
-    
     
 	// owl-carousel
 	$(".owl-carousel").owlCarousel({
